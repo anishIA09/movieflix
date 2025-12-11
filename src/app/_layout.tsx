@@ -1,11 +1,12 @@
 import { Tabs } from "expo-router";
 import React from "react";
 import { StatusBar } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import "./global.css";
 
 export default function RootLayout() {
   return (
-    <React.Fragment>
+    <SafeAreaProvider>
       <StatusBar barStyle={"default"} />
       <Tabs>
         <Tabs.Screen
@@ -30,6 +31,6 @@ export default function RootLayout() {
           }}
         />
       </Tabs>
-    </React.Fragment>
+    </SafeAreaProvider>
   );
 }
